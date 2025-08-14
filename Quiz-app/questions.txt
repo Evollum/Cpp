@@ -1,0 +1,8 @@
+What is the capital of France?|Paris|London|Berlin|1
+What is 2+2?|3|4|5|2
+Which language is this quiz app written in?|Python|C++|Java|2
+What is the largest planet in our solar system?|Earth|Jupiter|Mars|2
+Who wrote 'Romeo and Juliet'?|William Shakespeare|Charles Dickens|Jane Austen|1
+What is the boiling point of water at sea level (°C)?|90|100|110|2
+Which continent is the Sahara Desert located on?|Asia|Africa|Australia|2
+What is the chemical symbol for gold?|Au|Ag|Fe|1
