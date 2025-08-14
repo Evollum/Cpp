@@ -36,17 +36,23 @@ int main() {
     int qnum = 1;
     for (const auto& q : questions) {
         std::cout << "Question " << qnum++ << ": " << q.text << std::endl;
+        char optionLetter = 'a';
         for (size_t i = 0; i < q.options.size(); ++i) {
-            std::cout << i+1 << ". " << q.options[i] << std::endl;
+            std::cout << static_cast<char>('a' + i) << ". " << q.options[i] << std::endl;
         }
-        int answer;
-        std::cout << "Your answer: ";
-        std::cin >> answer;
-        if (answer == q.correct) {
+        char answerChar;
+        std::cout << "Your answer (a, b, c): ";
+        std::cin >> answerChar;
+        // Convert to lowercase if uppercase
+        if (answerChar >= 'A' && answerChar <= 'Z') {
+            answerChar = answerChar - 'A' + 'a';
+        }
+        int answerIndex = answerChar - 'a' + 1; // 1-based index to match q.correct
+        if (answerIndex == q.correct) {
             std::cout << "Correct!\n";
             ++score;
         } else {
-            std::cout << "Wrong! Correct answer: " << q.options[q.correct-1] << "\n";
+            std::cout << "Wrong! Correct answer: " << static_cast<char>('a' + q.correct - 1) << ". " << q.options[q.correct-1] << "\n";
         }
         std::cout << std::endl;
     }
