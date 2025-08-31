@@ -6,7 +6,7 @@ int main() {
     int N;
     cin >> N;
 
-    // Special case
+    // Special case: if N is 10000, output 9999
     if (N == 10000) {
         cout << 9999 << endl;
         return 0;
@@ -18,9 +18,10 @@ int main() {
         return 0;
     }
 
-    // Find the nearest numbers ending in 99
+    // Find the nearest numbers ending in 99 below and above N
     int down = (N / 100) * 100 + 99;
-    int up = down + 100;
+    if (down > N) down -= 100; // Make sure down is <= N
+    int up = down + 100;       // up is always > N
 
     // Choose the closest, prefer the bigger one in a tie
     if (abs(N - down) < abs(up - N)) {
